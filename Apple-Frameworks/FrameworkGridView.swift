@@ -9,16 +9,27 @@ import SwiftUI
 
 struct FrameworkGridView: View {
     
+    @StateObject var viewModal = FrameworkGridViewModel();
+    
     let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
     
     var body: some View {
-        LazyVGrid(columns:columns){
-            FrameworkTitleView(name:"App Clips", imageName: "app-clip")
-            FrameworkTitleView(name:"App Clips", imageName: "app-clip")
-            FrameworkTitleView(name:"App Clips", imageName: "app-clip")
-            FrameworkTitleView(name:"App Clips", imageName: "app-clip")
-            FrameworkTitleView(name:"App Clips", imageName: "app-clip")
-            FrameworkTitleView(name:"App Clips", imageName: "app-clip")
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns:columns){
+                    
+                    ForEach(MockData.frameworks, id: \.id){ framework in
+                        FrameworkTitleView(framework: framework)
+                            .onTapGesture {
+                                viewModal.selectedFramework = framework
+                            }
+                    }
+                }
+            }.navigationTitle("Frameworks")
+                .sheet(isPresented: $viewModal.isShowingDetailView) {
+                    FrameworkDetailView(framework: viewModal.selectedFramework ?? MockData.sampleFramework, isShowingDetailView: $viewModal.isShowingDetailView)
+                }
+            
         }
     }
 }
@@ -29,19 +40,18 @@ struct FrameworkGridView: View {
 
 struct FrameworkTitleView: View {
     
-    let name:String;
-    let imageName:String;
+    let framework: Framework
     
     var body: some View {
         VStack{
-            Image(imageName)
+            Image(framework.imageName)
                 .resizable()
                 .frame(width: 90, height: 90)
-            Text(name)
+            Text(framework.name)
                 .font(.title2)
                 .fontWeight(.semibold)
                 .scaledToFit()
                 .minimumScaleFactor(0.6)
-        }
+        }.padding()
     }
 }
