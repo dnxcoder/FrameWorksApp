@@ -20,26 +20,26 @@ struct Framework: Hashable, Identifiable {
 struct MockData {
     
     
-    static let sampleFramework = Framework(name: "App Clips",
-                                           imageName: "app-clip",
+    static let sampleFramework = Framework(name: "Igor App",
+                                           imageName: "igor",
                                            urlString: "https://developer.apple.com/app-clips",
                                            description: "App Clips are a great way for users to quickly access and experience what your app has to offer. An App Clip is a small part of your app that’s discoverable at the moment it’s needed. App Clips are fast and lightweight so a user can open them quickly.\n\nWhether they're ordering take-out from a restaurant, renting a scooter, or setting up a new connected appliance for the first time, users will be able to start and finish an experience from your app in seconds. And when they’re done, you can offer the opportunity to download your full app from the App Store.");
     
     static let frameworks = [
-        Framework(name: "App Clips",
-                  imageName: "app-clip",
+        Framework(name: "Igor App",
+                  imageName: "igor",
                   urlString: "https://developer.apple.com/app-clips",
-                  description: "App Clips are a great way for users to quickly access and experience what your app has to offer. An App Clip is a small part of your app that’s discoverable at the moment it’s needed. App Clips are fast and lightweight so a user can open them quickly.\n\nWhether they're ordering take-out from a restaurant, renting a scooter, or setting up a new connected appliance for the first time, users will be able to start and finish an experience from your app in seconds. And when they’re done, you can offer the opportunity to download your full app from the App Store."),
+                  description: "Neste app tu vai aprender a deixar sua barbar crescer de modo que possa tirar fotinhas no instagram igual modelinho, meninas vao se iludir por voce. Atencao risco de morrer pro pai de uma delas."),
         
         Framework(name: "ARKit",
                   imageName: "arkit",
                   urlString: "https://developer.apple.com/augmented-reality/arkit",
                   description: "ARKit 4 introduces a brand-new Depth API, creating a new way to access the detailed depth information gathered by the LiDAR Scanner on iPhone 12 Pro, iPhone 12 Pro Max, and iPad Pro.\n\nLocation Anchors leverages the higher-resolution data in Apple Maps to place AR experiences at a specific point in the world in your iPhone and iPad apps. And support for face tracking extends to all devices with the Apple Neural Engine and a front-facing camera, so even more users can experience the joy of AR in photos and videos."),
         
-        Framework(name: "CarPlay",
-                  imageName: "carplay",
+        Framework(name: "Lucas App",
+                  imageName: "lucas",
                   urlString: "https://developer.apple.com/carplay",
-                  description: "A smarter, safer way to use your iPhone in the car, CarPlay takes the things you want to do with your iPhone while driving and puts them on your car’s built-in display.\n\nYou can get directions, make calls, send and receive messages, and listen to music, all while staying focused on the road."),
+                  description: "Neste app voce vai aprender a dar sumiço nos amigos depois de convida-los para jogar uma partidinha online. O app tambem traz dicas de como conseguir o alvara da mulher para jogar uma partidinha."),
         
         Framework(name: "Catalyst",
                   imageName: "catalyst",

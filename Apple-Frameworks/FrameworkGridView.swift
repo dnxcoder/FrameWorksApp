@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FrameworkGridView: View {
     
+    //instancing object FrameworkGridViewModel
     @StateObject var viewModal = FrameworkGridViewModel();
     
     let columns : [GridItem] = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
@@ -21,6 +22,7 @@ struct FrameworkGridView: View {
                     ForEach(MockData.frameworks, id: \.id){ framework in
                         FrameworkTitleView(framework: framework)
                             .onTapGesture {
+                            //setting the chosen framework object to our FrameworkGridViewModel
                                 viewModal.selectedFramework = framework
                             }
                     }
@@ -47,6 +49,7 @@ struct FrameworkTitleView: View {
             Image(framework.imageName)
                 .resizable()
                 .frame(width: 90, height: 90)
+                .cornerRadius(20)
             Text(framework.name)
                 .font(.title2)
                 .fontWeight(.semibold)
